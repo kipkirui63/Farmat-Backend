@@ -121,7 +121,11 @@ carts_output_schema = api.model('carts_output',{
 
 })
 
+carts_input_schema = api.model('carts_input',{
+    "id": fields.Integer,
+    "user_id":fields.Integer,
 
+})
 
 
 
