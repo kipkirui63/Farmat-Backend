@@ -161,7 +161,22 @@ product_input_schema = api.model('product_input', {
     
 })
 
-
+vendor_order_schema =  api.model('vendor_order',{
+   "id":fields.Integer,
+    "user_id" : fields.Integer, 
+    "fullnames" :fields.String,
+    "business_name" :fields.String,
+    "mobile_number" :fields.String,
+    "email_address" : fields.String,
+    "physical_address" : fields.String,
+    "latitude" : fields.Float,
+    "longitude" : fields.Float,
+    "product_list" : fields.String,
+    "image" : fields.String,
+    "county": fields.String,
+    "created_at" : fields.DateTime,
+    "updated_at" : fields.DateTime, 
+})
 
 
 
