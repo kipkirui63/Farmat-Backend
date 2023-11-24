@@ -177,8 +177,23 @@ vendor_order_schema =  api.model('vendor_order',{
     "created_at" : fields.DateTime,
     "updated_at" : fields.DateTime, 
 })
-
-
+product_summary_schema = api.model("products_order", {
+    "id": fields.Integer,
+    "name": fields.String,
+    "description": fields.String,
+    "image": fields.String,
+    "price": fields.Integer,
+    "product_id": fields.Integer,
+    "vendor": fields.Nested(vendor_order_schema),
+    "category": fields.Nested(categories_schema),
+})
+cart_item_output_schema = api.model('cart_item_output', {
+    "id": fields.Integer,
+    "cart_id": fields.Integer,
+    "product": fields.Nested(product_summary_schema),
+    "quantity": fields.Integer,
+    "added_at": fields.DateTime,
+})
 
 
 
