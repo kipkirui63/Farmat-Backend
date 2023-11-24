@@ -249,7 +249,25 @@ payments_schema = api.model('payments',{
     # 'order':fields.Nested(order_products_schema)
 })
 
-
+order_schema = api.model('order', {
+    "id": fields.Integer,
+    "user_id": fields.Integer,
+    "quantity": fields.Integer,
+    "status": fields.String,
+    "delivery_type" :fields.String,
+    "phone_number" : fields.String,
+    "shipping_address" : fields.String,
+    "county" : fields.String,
+    "email" :fields.String,
+    "amount" : fields.Integer,
+    "date_created" :fields.DateTime,
+    "payment_uid" : fields.String,
+    "products": fields.List(fields.Nested(product_schema)),
+    "user": fields.Nested(users_summary_schema),
+    'payment': fields.Nested(payments_schema),
+   
+  
+})
 
 
 
