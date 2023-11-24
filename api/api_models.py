@@ -101,7 +101,15 @@ cart_item_input_schema = api.model('cart_item_input', {
     
 })
 
+transaction_input_schema = api.model('transaction_input', {
+    "product_id": fields.Integer(required=True),
+    "quantity": fields.Integer(required=True),
+})
 
+
+transaction_input_schema = api.model('transaction_input', {
+    "id": fields.Integer,
+})
 
 
 
