@@ -151,7 +151,15 @@ vendors_schema=api.model('vendors',{
 })
 
 
-
+product_input_schema = api.model('product_input', {
+    "name": fields.String,
+    "description": fields.String,
+    "vendor_id": fields.Integer,
+    "category_id": fields.Integer,
+    "image": fields.String,
+    "price": fields.Integer,
+    
+})
 
 
 
