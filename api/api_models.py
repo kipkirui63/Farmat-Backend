@@ -207,7 +207,24 @@ cart_item_schema = api.model('cart_item', {
 
 
 
+order_input_schema = api.model('order_input', {
+    "product_id": fields.Integer,
+    "user_id": fields.Integer,
+    "quantity": fields.Integer,
+    "status": fields.String,
+    "delivery_type" :fields.String,
+    "phone_number" : fields.String,
+    "shipping_address" : fields.String,
+    "county" : fields.String,
+    "email" :fields.String,
+    "amount" : fields.Integer,
+    "payment_uid" : fields.String,
+    "full_name": fields.String,
+    "vendor_id": fields.Integer,
+    "DoorStepDelivery": fields.String,
+    "Pickup": fields.String,
 
+})
 
 
 
