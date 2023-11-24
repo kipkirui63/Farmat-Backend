@@ -18,21 +18,21 @@ from flask_sqlalchemy import SQLAlchemy
 import secrets
 
 
-# app = Flask(__name__, static_url_path='/static', static_folder='photos')
+app = Flask(__name__, static_url_path='/static', static_folder='photos')
 
-# # Configure Flask-Uploads for image uploads
-# app.config['UPLOADED_PHOTOS_DEST'] = 'photos'  # Folder to store uploaded images
+# Configure Flask-Uploads for image uploads
+app.config['UPLOADED_PHOTOS_DEST'] = 'photos'  # Folder to store uploaded images
 
-# # Setup app configs
-# secret_key = secrets.token_hex(16)
-# app.config['SECRET_KEY'] = secret_key
-# app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///app.db'
-# app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.config['JWT_DEBUG'] = True
-# # app.config['JWT_COOKIE_CSRF_PROTECT']= False
-# app.json.compact = False
+# Setup app configs
+secret_key = secrets.token_hex(16)
+app.config['SECRET_KEY'] = secret_key
+app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///app.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.config['JWT_DEBUG'] = True
+# app.config['JWT_COOKIE_CSRF_PROTECT']= False
+app.json.compact = False
 
-# db.init_app(app)
+db.init_app(app)
 
 
 
