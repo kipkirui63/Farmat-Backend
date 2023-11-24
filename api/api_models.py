@@ -141,7 +141,14 @@ vendor_input_schema = api.model('vendor_input',{
 
 })
 
-
+vendors_schema=api.model('vendors',{
+    "id":fields.Integer,
+    "user_id" : fields.Integer,
+    "fullnames" :fields.String,
+    "business_name" :fields.String,
+    "mobile_number" :fields.String,
+    "email_address" : fields.String,
+})
 
 
 
