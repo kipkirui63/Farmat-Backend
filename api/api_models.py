@@ -225,6 +225,18 @@ order_input_schema = api.model('order_input', {
     "Pickup": fields.String,
 
 })
+product_schema = api.model("products", {
+    "id": fields.Integer,
+    "name": fields.String,
+    "description": fields.String,
+    "image": fields.String,
+    "price": fields.Integer,
+    "category_id": fields.Integer,
+    "vendor": fields.Nested(vendor_order_schema),
+    "category": fields.Nested(category_input_schema),
+    "created_at": fields.DateTime
+    
+})
 
 
 
