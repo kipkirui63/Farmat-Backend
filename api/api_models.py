@@ -270,15 +270,75 @@ order_schema = api.model('order', {
 })
 
 
+user_schema = api.model('user',{
+    "public_id": fields.String,
+    "username": fields.String,
+    "email": fields.String,
+    "first_name": fields.String,
+    "first_name": fields.String,
+    "address": fields.String,
+    "phone_number": fields.String,
+     "profile_pic": fields.String,
+     "orders": fields.List(fields.Nested(order_schema))
+})
+vendor_schema=api.model('vendor',{
+    "id":fields.Integer,
+    "user_id" : fields.Integer, 
+    "fullnames" :fields.String,
+    "business_name" :fields.String,
+    "mobile_number" :fields.String,
+    "email_address" : fields.String,
+    "physical_address" : fields.String,
+    "latitude" : fields.Float,
+    "longitude" : fields.Float,
+    "product_list" : fields.String,
+    "image" : fields.String,
+    "created_at" : fields.DateTime,
+    "updated_at" : fields.DateTime, 
+    "products": fields.List(fields.Nested(product_schema)),
+    "orders": fields.List(fields.Nested(order_schema))
+})
+
+cart_schema=api.model('cart',{
+    "id": fields.Integer,
+    "user_id": fields.Integer,
+    "cartItems": fields.List(fields.Nested(cart_item_output_schema)),
+})
 
 
+UploadImage_schema=api.model('UploadImage',{
+    "id": fields.Integer,
+    "filename": fields.String,
+    "url":fields.String
+})
 
+cart_delete_schema = api.model('cart_delete_schema',{
 
+})
+product_order_schema = api.model('product_order_schema',{
+    "id": fields.Integer,
+    "name": fields.String,
+    "description": fields.String,
+    "image": fields.String,
+    "price": fields.Integer,
+    "category_id": fields.Integer,
+    "category": fields.Nested(category_input_schema),
+    "created_at": fields.DateTime
+})
 
+order_products_schema = api.model('order_products_schema',{
+    'id': fields.Integer,
+    'product_id': fields.Integer,
+    'vendor_id': fields.Integer,
+    'order_id': fields.Integer,
+    'quantity': fields.Integer,
+    'amount': fields.Integer,
+    'products': fields.Nested(product_order_schema),
+    'orders': fields.Nested(order_schema),
+    'vendor': fields.Nested(vendor_order_schema),
+    'payment': fields.Nested(payments_schema),
+})
 
-
-
-
-
-
-
+refresh_token_schema = api.model('refresh_token_schema',{
+    "refresh_token": fields.String
+})
