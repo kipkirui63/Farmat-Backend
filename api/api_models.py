@@ -239,6 +239,15 @@ product_schema = api.model("products", {
 })
 
 
+payments_schema = api.model('payments',{
+    'id':fields.Integer,
+    'mpesa_receipt_code':fields.String,
+    'payment_date':fields.String,
+    'paid_by_number':fields.String,
+    'amount_paid':fields.Integer,
+    'payment_uid':fields.String,
+    # 'order':fields.Nested(order_products_schema)
+})
 
 
 
