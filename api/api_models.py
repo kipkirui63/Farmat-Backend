@@ -127,6 +127,19 @@ carts_input_schema = api.model('carts_input',{
 
 })
 
+vendor_input_schema = api.model('vendor_input',{
+    "user_id" : fields.Integer, 
+    "fullnames" :fields.String,
+    "business_name" :fields.String,
+    "mobile_number" :fields.String,
+    "email_address" : fields.String,
+    "physical_address" : fields.String,
+    "latitude" : fields.Float,
+    "longitude" : fields.Float,
+    "product_list" : fields.String,
+    "image" : fields.String,
+
+})
 
 
 
