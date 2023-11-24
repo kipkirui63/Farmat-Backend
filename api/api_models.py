@@ -64,6 +64,43 @@ category_input_schema = api.model('category_input',{
 
 
 
+photo_category_schema = api.model('photo_category',{
+    "id": fields.Integer,
+    "name": fields.String,
+    "description": fields.String,
+    "price": fields.Integer,
+    "image": fields.String,
+})
+
+transaction_schema = api.model('transaction', {
+    "id": fields.Integer,
+    "photo": fields.Nested(photo_category_schema),
+    "user": fields.Nested(users_schema),
+    "purchased_at": fields.DateTime,
+})
+
+
+
+category_schema = api.model('category',{
+    "id": fields.Integer,
+    "name": fields.String,
+    "image": fields.String,
+    "products": fields.List(fields.Nested(photo_category_schema))
+})
+categories_schema = api.model('categories',{
+    "id": fields.Integer,
+    "name": fields.String,
+})
+
+
+
+cart_item_input_schema = api.model('cart_item_input', {
+    "product_id": fields.Integer,
+    "quantity": fields.Integer,
+    "cart_id": fields.Integer
+    
+})
+
 
 
 
