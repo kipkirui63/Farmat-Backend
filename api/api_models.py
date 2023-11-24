@@ -113,7 +113,13 @@ transaction_input_schema = api.model('transaction_input', {
 
 
 
+carts_output_schema = api.model('carts_output',{
+    "id": fields.Integer,
+    "user_id":fields.Integer,
+    "created_at": fields.DateTime,
+    "updated_at": fields.DateTime
 
+})
 
 
 
